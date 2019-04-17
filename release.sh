@@ -25,8 +25,8 @@ tag="$version"
 git add -u
 git commit -m "Snyk filter: $version release [skip ci]"
 git tag -f -a $tag -m "version $version"
-git push
-git push origin $tag
+git push -q https://${GH_TOKEN}@github.com/denismakogon/snyk-filter
+git push -q https://${GH_TOKEN}@github.com/denismakogon/snyk-filter origin $tag
 
 # For GitHub
 url='https://api.github.com/repos/denismakogon/snyk-filter/releases'
