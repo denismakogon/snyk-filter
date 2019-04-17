@@ -1,4 +1,5 @@
 snyk-filter
+snyk-filter_*
 # Binaries for programs and plugins
 *.exe
 *.exe~
