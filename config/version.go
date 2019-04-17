@@ -9,7 +9,7 @@ import (
 )
 
 // Version of Snyk-filter CLI
-var Version = "0.0.2"
+var Version = "0.0.3"
 
 func GetVersion(versionType string) string {
 	base := "https://github.com/denismakogon/snyk-filter/releases"
