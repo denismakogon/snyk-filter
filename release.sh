@@ -11,8 +11,6 @@ else
   exit 1
 fi
 
-git pull
-
 version_file="config/version.go"
 # Bump version, patch by default - also checks if previous commit message contains `[bump X]`, and if so, bumps the appropriate semver number - https://github.com/treeder/dockers/tree/master/bump
 docker run --rm -it -v $PWD:/app -w /app treeder/bump --filename $version_file "$(git log -1 --pretty=%B)"
