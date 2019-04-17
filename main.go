@@ -90,7 +90,7 @@ func (sr *ScanResult) GetIssuesWIthTheFollowingSeverity(severity string) Vulnera
 func main() {
 
 	severity := flag.String("severity", "all", "the severity to filter issues by, values: all/final/high/medium/low")
-	version := flag.Bool("version", true, "returns CLI tool version")
+	version := flag.Bool("version", false, "returns CLI tool version")
 	flag.Parse()
 
 	if *version {
