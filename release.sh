@@ -25,3 +25,6 @@ git commit -m "Snyk filter: $version release [skip ci]"
 git tag -f -a $tag -m "version $version"
 git push
 git push -q origin $tag
+
+docker build -t denismakogon/snyk-filter:$tag .
+docker push denismakogon/snyk-filter:$tag
