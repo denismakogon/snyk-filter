@@ -55,13 +55,13 @@ case "$(uname)" in
     $sh_c "$curl /tmp/snyk-filter_linux $url/$version/snyk-filter_linux"
     $sh_c "mv /tmp/snyk-filter_linux /usr/local/bin/snyk-filter"
     $sh_c "chmod +x /usr/local/bin/snyk-filter"
-    snyk-filter -h
+    snyk-filter -version
     ;;
   Darwin)
     $sh_c "$curl /tmp/snyk-filter_mac $url/$version/snyk-filter_mac"
     $sh_c "mv /tmp/snyk-filter_mac /usr/local/bin/snyk-filter"
     $sh_c "chmod +x /usr/local/bin/snyk-filter"
-    snyk-filter -h
+    snyk-filter -version
     ;;
   *)
     cat >&2 <<'EOF'

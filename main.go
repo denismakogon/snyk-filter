@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"log"
 	"os"
+
+	"github.com/denismakogon/snyk-filter/config"
 )
 
 // Vulnerability struct
@@ -88,7 +90,13 @@ func (sr *ScanResult) GetIssuesWIthTheFollowingSeverity(severity string) Vulnera
 func main() {
 
 	severity := flag.String("severity", "all", "the severity to filter issues by, values: all/final/high/medium/low")
+	version := flag.Bool("version", true, "returns CLI tool version")
 	flag.Parse()
+
+	if *version {
+		fmt.Println(config.Version)
+		return
+	}
 
 	var res ScanResult
 	err := json.NewDecoder(os.Stdin).Decode(&res)
@@ -142,7 +150,6 @@ func main() {
 			medium.Print()
 			fmt.Println("-----------------------------------------")
 		}
-
 		if *severity == "high" {
 			fmt.Println("-----------------------------------------")
 			fmt.Println("High severity issues:")
@@ -150,6 +157,5 @@ func main() {
 			high.Print()
 			fmt.Println("-----------------------------------------")
 		}
-
 	}
 }

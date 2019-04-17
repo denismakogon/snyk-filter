@@ -8,11 +8,11 @@ import (
 	"time"
 )
 
-// Version of Fn CLI
+// Version of Snyk-filter CLI
 var Version = "0.0.1"
 
 func GetVersion(versionType string) string {
-	base := "https://github.com/fnproject/cli/releases"
+	base := "https://github.com/denismakogon/snyk-filter/releases"
 	url := ""
 	c := http.Client{}
 	c.Timeout = time.Second * 3
